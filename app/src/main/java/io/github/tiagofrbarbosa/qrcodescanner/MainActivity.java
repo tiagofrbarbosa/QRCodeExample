@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //View Objects
     private Button buttonScan;
-    private TextView textViewName, textViewAddress;
+    private TextView textViewCode;
 
     //qr code scanner object
     private IntentIntegrator qrScan;
@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //View objects
         buttonScan = (Button) findViewById(R.id.buttonScan);
-        textViewName = (TextView) findViewById(R.id.textViewName);
-        textViewAddress = (TextView) findViewById(R.id.textViewAddress);
+        textViewCode = (TextView) findViewById(R.id.textViewCode);
 
         //intializing scan object
         qrScan = new IntentIntegrator(this);
@@ -55,8 +54,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //converting the data to json
                     JSONObject obj = new JSONObject(result.getContents());
                     //setting values to textviews
-                    textViewName.setText(obj.getString("name"));
-                    textViewAddress.setText(obj.getString("address"));
+                    //textViewCode.setText(obj.getString("code"));
+                    String code = obj.getString("code");
+                    if(code.equals("q3h9d3d5")){
+                        startActivity(new Intent(this, ContentActivity.class));
+                    }else{
+                        Toast.makeText(this,"Código não reconhecido",Toast.LENGTH_LONG).show();
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     //if control comes here

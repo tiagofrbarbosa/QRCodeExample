@@ -19,27 +19,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:text="Code" />
 
         <TextView
-            android:id="@+id/textViewName"
+            android:id="@+id/textViewCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="xyz"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Address" />
-
-        <TextView
-            android:id="@+id/textViewAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="xyz"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
 
     </LinearLayout>
 
