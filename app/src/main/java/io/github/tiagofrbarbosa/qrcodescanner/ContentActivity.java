@@ -31,7 +31,7 @@ public class ContentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplication().getBaseContext(),"Videos",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getApplication().getBaseContext(),VideoActivity.class));
+                startActivity(new Intent(getApplication().getBaseContext(),SelectVideoActivity.class));
             }
         });
     }

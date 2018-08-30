@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".ContentActivity" />
         <activity android:name=".ImageActivity" />
-        <activity android:name=".VideoActivity"></activity>
+        <activity android:name=".VideoActivity" />
+        <activity android:name=".SelectVideoActivity"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
@@ -27,12 +28,16 @@ public class VideoActivity extends AppCompatActivity {
     private int currentWindow;
     private boolean playWhenReady = true;
 
+    private String url_video = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
         playerView = findViewById(R.id.video_view);
+
+        if(getIntent().getExtras() != null) url_video = getIntent().getExtras().getString("url");
     }
 
     @Override
@@ -55,11 +60,12 @@ public class VideoActivity extends AppCompatActivity {
     @SuppressLint("InlinedApi")
     private void hideSystemUi() {
         playerView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                //| View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+                //| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        );
     }
 
     @Override
@@ -98,7 +104,7 @@ public class VideoActivity extends AppCompatActivity {
         player.setPlayWhenReady(playWhenReady);
         player.seekTo(currentWindow, playbackPosition);
 
-        Uri uri = Uri.parse(getString(R.string.media_url_mp3));
+        Uri uri = Uri.parse(url_video);
         MediaSource mediaSource = buildMediaSource(uri);
         player.prepare(mediaSource, true, false);
     }
