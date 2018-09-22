@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //View objects
         buttonScan = (Button) findViewById(R.id.buttonScan);
-        textViewCode = (TextView) findViewById(R.id.textViewCode);
 
         //intializing scan object
         qrScan = new IntentIntegrator(this);

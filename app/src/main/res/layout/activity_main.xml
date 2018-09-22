@@ -16,16 +16,10 @@
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
+            android:src="@drawable/logo_qcd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Code" />
-
-        <TextView
-            android:id="@+id/textViewCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -34,6 +28,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Scan QR Code" />
+        android:text="Escanear QR Code" />
 
 </RelativeLayout>

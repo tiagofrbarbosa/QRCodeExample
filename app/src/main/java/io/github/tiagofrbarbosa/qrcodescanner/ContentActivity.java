@@ -16,16 +16,16 @@ public class ContentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
 
-        imgPhotos = (ImageView) findViewById(R.id.imgPhoto);
+        //imgPhotos = (ImageView) findViewById(R.id.imgPhoto);
         imgVideos = (ImageView) findViewById(R.id.imgVideo);
 
-        imgPhotos.setOnClickListener(new View.OnClickListener() {
+        /*imgPhotos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplication().getBaseContext(),"Photos",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplication().getBaseContext(),ImageActivity.class));
             }
-        });
+        });*/
 
         imgVideos.setOnClickListener(new View.OnClickListener() {
             @Override
